@@ -1,0 +1,10 @@
+a{
+    text-decoration: none;
+    color: black;
+    border-color: black;
+}
+
+.active{
+    background-color: #0062cc;
+    color: white;
+}

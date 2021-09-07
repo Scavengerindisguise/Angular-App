@@ -1,0 +1,9 @@
+<a style="cursor: pointer;" [routerLink]="[index]">
+    <div class="media w-100 border border-primary p-3 mb-1" routerLinkActive="active">
+        <div class="media-body">
+            <h5 class="mt-0 mb-1">{{recipe.name}}</h5>
+            <p>{{recipe.description}}</p>
+        </div>
+        <img [src]="recipe.imagePath" class="ml-3" alt="{{recipe.name}}" style="width: 50px">
+    </div>
+</a>
