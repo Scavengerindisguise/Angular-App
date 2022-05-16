@@ -7,10 +7,10 @@
 
     <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item" routerLinkActive='active'>
+            <li class="nav-item" routerLinkActive='active' *ngIf="isAuthenticated">
                 <a class="nav-link" routerLink='/recipes'>Recipes</a>
             </li>
-            <li class="nav-item" routerLinkActive='active'>
+            <li class="nav-item" routerLinkActive='active' *ngIf="!isAuthenticated">
                 <a class="nav-link" routerLink='/auth'>Authentication</a>
             </li>
             <li class="nav-item" routerLinkActive='active'>
@@ -18,7 +18,10 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown" appDropdown>
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a class="nav-link" href="#" (click)="onLogOut()">Logout</a>
+            </li>
+            <li class="nav-item dropdown" *ngIf="isAuthenticated" appDropdown>
                 <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" role="button"
                     aria-haspopup="true" aria-expanded="false">
                     Manage
