@@ -44,7 +44,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     } else {
       authObs = this.authService.signUp(email, password);
     }
-
+    
     authObs.subscribe(resData => {
       console.log(resData);
       this.isLoading = false;
